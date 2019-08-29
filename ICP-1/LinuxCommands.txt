@@ -1,0 +1,13 @@
+hadoop fs -ls /user/cloudera/bdp/ICP1
+hadoop fs -put word_list.txt /user/cloudera/bdp/ICP1
+hadoop fs -ls ltr /user/cloudera/bdp/ICP1
+hadoop fs -cat ltr /user/cloudera/bdp/ICP1/word_list.txt
+hadoop fs -appendToFile shakespeare.txt /user/cloudera/bdp/ICP1/word_list.txt
+hadoop fs -ls ltr /user/cloudera/bdp/ICP1
+hadoop fs -cat /user/cloudera/bdp/ICP1/word_list.txt | head -n 5
+hadoop fs -cat /user/cloudera/bdp/ICP1/word_list.txt | head -n 5 |hadoop fs -put - /user/cloudera/bdp/ICP1/head.txt
+hadoop fs -cat /user/cloudera/bdp/ICP1/head.txt
+hadoop fs -cat /user/cloudera/bdp/ICP1/word_list.txt | tail -n 5 |hadoop fs -put - /user/cloudera/bdp/ICP1/tail.txt
+hadoop fs -cat /user/cloudera/bdp/ICP1/tail.txt
+hadoop fs -text /user/cloudera/bdp/ICP1/*.txt | hadoop fs -put - /user/cloudera/bdp/ICP1/consolidated.txt
+hadoop fs -ls /user/cloudera/bdp/ICP1
