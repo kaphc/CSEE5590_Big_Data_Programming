@@ -31,4 +31,4 @@ select * from ratings limit 10;
 select * from users limit 10;
 select title from movies where genres like "%Action%" and genres like "%Drama%";
 select movieId, rating from ratings where rating=5 limit 10;
-select * from (select movies.movieId, Avg(ratings.rating) as average from movies, ratings where movies.movieId = ratings.movieId and movies.genres like "%Action%" group by movies.movieId) as d order by average desc limit 11;
+select * from (select title,avg(rating) as average from movies,ratings,users where ratings.userId=users.user_id and users.gender='M' and movies.movieId=ratings.movieId and (genres like '%Action%' or genres like '%Drama%') group by title) as filtered where filtered.average between 4.4 AND 4.9 order by filtered.average desc;
