@@ -1,0 +1,34 @@
+Question-1:
+create table petrol (distributer_id STRING, distributer_name STRING, amt_IN STRING, amt_OUT STRING, vol_IN INT, vol_OUT INT, year INT) row format delimited fields terminated by ',' stored as textfile;
+show tables;
+load data local inpath '/home/cloudera/Downloads/ICP-4/petrol.txt' into table petrol;
+select * from petrol limit 10;
+select distributer_name, sum(vol_OUT) from petrol group by distributer_name;
+select distributer_id, vol_OUT from petrol order by vol_OUT desc limit 10;
+select distributer_id, vol_OUT from petrol order by vol_OUT limit 10;
+select distributer_name, year from petrol where (vol_in - vol_out)>400;
+
+Question-2:
+create table olymbic (athelete STRING, age INT, country STRING, year STRING, closing STRING, sport STRING, gold INT, silver INT, bronze INT, total INT) row format delimited fields terminated by '\t' stored as textfile;
+show tables;
+load data local inpath '/home/cloudera/Downloads/ICP-4/petrol.txt' into table petrol;
+load data local inpath '/home/cloudera/Downloads/ICP-4/petrol.txt' into table petrol;
+select country, sum(total) from olymbic where sport="Swimming" group by country;
+select country, sum(total) from olymbic where sport="Swimming" group by country;
+select country, sum(total) from olymbic group by country;
+select country, sum(gold) from olymbic group by country;
+select distinct(country), year from olymbic where total>0 and sport="Shooting" order by year;
+select distinct(country), year from olymbic where total>0 and sport="Shooting" group by year;
+
+Question-3:
+create table movies (movieId INT, title STRING, genres STRING) row format delimited fields terminated by ',' stored as textfile;
+create table movies (movieId INT, title STRING, genres STRING) row format delimited fields terminated by ',' stored as textfile;
+create table movies (movieId INT, title STRING, genres STRING) row format delimited fields terminated by ',' stored as textfile;
+show tables;
+load data local inpath '/home/cloudera/Downloads/ICP-4/users.txt' into table users;
+select * from movies limit 10;
+select * from ratings limit 10;
+select * from users limit 10;
+select title from movies where genres like "%Action%" and genres like "%Drama%";
+select movieId, rating from ratings where rating=5 limit 10;
+select * from (select movies.movieId, Avg(ratings.rating) as average from movies, ratings where movies.movieId = ratings.movieId and movies.genres like "%Action%" group by movies.movieId) as d order by average desc limit 11;
