@@ -1,0 +1,37 @@
+
+hive> show tables;
+
+hive> create table stocks
+(date STRING,
+val1 FLOAT,
+val2 FLOAT,
+val3 FLOAT,
+val4 FLOAT,
+total FLOAT,
+val5 FLOAT)
+row format delimited fields terminated by ',' stored as textfile;
+
+hive> show tables;
+
+hive> load data local inpath '/home/cloudera/Downloads/stocks.csv' into table stocks;
+
+hive> select * from stocks limit 10;
+
+[cloudera@quickstart ~]$ hadoop fs -ls /user/hive/warehouse/
+
+mysql> create table stocks
+(date VARCHAR(100),
+val1 FLOAT,
+val2 FLOAT,
+val3 FLOAT,
+val4 FLOAT,
+total FLOAT,
+val5 FLOAT,
+PRIMARY KEY(date));
+
+[cloudera@quickstart ~]$ sqoop export -- connect jdbc:mysql://localhost/ICP_5 
+--username root --password cloudera 
+--table stocks --m 1 
+--exported-dir /user/hive/warehouse/stocks
+
+mysql> select * from stocks limit 10;

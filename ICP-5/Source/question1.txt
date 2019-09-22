@@ -1,0 +1,47 @@
+mysql> show databases;
+
+mysql> create database ICP_5;
+
+mysql> use ICP_5;
+
+mysql> create table student 
+(studentId INT NOT NULL,
+studentName VARCHAR(20),
+major VARCHAR(20),
+gpa FLOAT,
+tutorId INT,
+PRIMARY KEY(studentId)); 
+
+mysql> insert into student values(1,'Albert','PHY',2.9,100);
+mysql> insert into student values(2,'David','CS',3.3,100);
+mysql> insert into student values(3,'Tom','CS',3.23,101);
+mysql> insert into student values(4,'Jerry','CHEM',3.74,102);
+
+mysql> select * from student;
+
+[cloudera@quickstart ~]$ sqoop import -- connect jdbc:mysql://localhost/ICP_5 
+--username root --password cloudera 
+--table student --m 1
+
+[cloudera@quickstart ~]$ hadoop fs -ls
+
+[cloudera@quickstart ~]$ hadoop fs -ls student/
+
+[cloudera@quickstart ~]$ hadoop fs -cat student/*
+
+mysql> use ICP_5;
+mysql> create table student_exported_from_hadoop
+(studentId INT NOT NULL,
+studentName VARCHAR(20),
+major VARCHAR(20),
+gpa FLOAT,
+tutorId INT,
+PRIMARY KEY(studentId)); 
+
+[cloudera@quickstart ~]$ sqoop export -- connect jdbc:mysql://localhost/ICP_5 
+--username root --password cloudera 
+--table student_exported_from_hadoop --m 1
+
+mysql> use ICP_5;
+mysql> show tables;
+mysql> select * from student_exported_from_hadoop;

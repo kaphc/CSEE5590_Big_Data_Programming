@@ -1,0 +1,4 @@
+[cloudera@quickstart ~]$ sudo service mysqld start
+[cloudera@quickstart ~]$ myql -uroot -pcloudera
+
+[cloudera@quickstart ~]$ sqoop-version
