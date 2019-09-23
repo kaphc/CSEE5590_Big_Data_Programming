@@ -1,0 +1,50 @@
+Query-1:
+
+SELECT month, 
+       standard_deviation 
+FROM   ( 
+                SELECT   Substr(date, 1, 7) AS MONTH, 
+                         Stddev(total)      AS standard_deviation 
+                FROM     stocks 
+                GROUP BY Substr(date, 1, 7)) AS grouped_table 
+WHERE  standard_deviation < 1500000;
+
+
+
+Query-2:
+
+SELECT month, 
+       month_count 
+FROM   ( 
+                SELECT   Substr(date, 1, 7) AS MONTH, 
+                         Count(total)       AS month_count 
+                FROM     stocks 
+                WHERE    Substr(date, 1, 4) BETWEEN 1984 AND      1986 
+                GROUP BY Substr(date, 1, 7)) AS filtered_table 
+WHERE  (( 
+                     Substr(month, 6, 7) = 01 
+                            || Substr(month, 6, 7) = 03 
+                            || Substr(month, 6, 7) = 05 
+                            || Substr(month, 6, 7) = 07 
+                            || Substr(month, 6, 7) = 08 
+                            || Substr(month, 6, 7) = 10 
+                            || Substr(month, 6, 7) = 31) && month_count < 20) 
+              || ((Substr(month, 6, 7) = 02 
+              || Substr(month, 6, 7) = 04 
+              || Substr(month, 6, 7) = 06 
+              || Substr(month, 6, 7) = 09 
+              || Substr(month, 6, 7) = 11) && month_count < 30) ;
+
+
+
+Query-3:
+
+SELECT year, 
+       average 
+FROM   ( 
+                SELECT   Substr(date, 1, 4) AS YEAR, 
+                         Avg(total)         AS average 
+                FROM     stocks 
+                WHERE    date LIKE "20%" 
+                GROUP BY Substr(date, 1, 4)) AS filtered_table 
+WHERE  average LIKE "10______.%";
