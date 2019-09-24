@@ -14,3 +14,6 @@ ICP-4<br>
 
 ICP-5<br>
 [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-5](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-5)
+
+ICP-6<br>
+[https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-6](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-6)
