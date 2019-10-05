@@ -1,5 +1,6 @@
 # CSEE5590_Big_Data_Programming<br>
 
+### In Class Programming
 ICP-1 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-1](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-1)
 
 ICP-2 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-2](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-2)
@@ -11,3 +12,6 @@ ICP-4 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-4](http
 ICP-5 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-5](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-5)
 
 ICP-6 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-6](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-6)
+
+### Lab Assignments
+LAB-1 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/LAB-1](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/LAB-1)
