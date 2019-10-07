@@ -1,0 +1,47 @@
+create table Zomato (restaurant_id INT, restaurant_name STRING,
+restaurant_location STRUCT<country_code:SMALLINT, city:STRING,
+address:STRING, locality:STRING, locality_verbose: STRING, longitude:
+FLOAT, latitude: FLOAT>, cuisines array<STRING>, average_cost INT,
+currency STRING, table_booking BOOLEAN, online_delivery BOOLEAN,
+delivery_now BOOLEAN, order_me BOOLEAN, price_range TINYINT,
+aggregate_rating FLOAT, rating_color STRING, rating_text STRING) row
+format delimited fields terminated by ',' collection items terminated
+by '$' stored as textfile;
+
+load data local inpath '/home/cloudera/Downloads/zomato.csv' into table zomato;
+
+select * from zomato limit 3;
+
+describe zomato;
+
+select restaurant_location.city, count(*) from zomato group by
+restaurant_location.city;
+
+select restaurant_name, restaurant_location.city from zomato where
+upper(restaurant_location.city) like "%CHENNAI%";
+
+select concat(restaurant_name,"   -    ",
+restaurant_location.city,":",restaurant_location.address,":",restaurant_location.longitude,":",restaurant_location.latitude)
+from zomato limit 10;
+
+create view if not exists zomato_filtered as select restaurant_id,
+restaurant_name, price_range, currency, table_booking from zomato;
+select * from zomato_filtered limit 10;
+
+select restaurant_name, case when aggregate_rating > 4 then 'Good'
+when aggregate_rating > 3 then 'Average' when aggregate_rating > 2
+then 'Bad' when aggregate_rating > 0 then 'Very Bad' else 'N/A' end as
+rating from zomato limit 20;
+
+select restaurant_id, restaurant_name, price_range, rating_text from
+zomato where price_range >= '4' and rating_text = 'Poor';
+
+select count(restaurant_id) from zomato where currency like "%$%";
+
+select restaurant_name, count from (select count(restaurant_id) as
+count, restaurant_name from zomato group by restaurant_name) as
+filtered_table  where count>1 limit 20;
+
+select restaurant_id, restaurant_name, price_range, rating_text from
+zomato where table_booking = True and online_delivery = True and
+delivery_now = True and rating_text = 'Excellent';
