@@ -20,6 +20,8 @@ restaurant_location.city;
 select restaurant_name, restaurant_location.city from zomato where
 upper(restaurant_location.city) like "%CHENNAI%";
 
+select size(cuisines), count(*) from zomato group by size(cuisines);
+
 select concat(restaurant_name,"   -    ",
 restaurant_location.city,":",restaurant_location.address,":",restaurant_location.longitude,":",restaurant_location.latitude)
 from zomato limit 10;
