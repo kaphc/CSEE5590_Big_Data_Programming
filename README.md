@@ -1,6 +1,8 @@
 # CSEE5590_Big_Data_Programming<br>
 
 ### In Class Programming:
+
+### Module-1: Hadoop
 ICP-1 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-1](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-1)
 
 ICP-2 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-2](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-2)
@@ -14,6 +16,9 @@ ICP-5 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-5](http
 ICP-6 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-6](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-6)
 
 ICP-7 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-7](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-7)
+
+### Module-2: Spark
+ICP-8 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-8](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-8)
 
 ### Lab Assignments:
 LAB-1 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/LAB-1](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/LAB-1)
