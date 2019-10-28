@@ -22,5 +22,7 @@ ICP-8 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-8](http
 
 ICP-9 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-9](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-9)
 
+ICP-10 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-10](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/ICP-10)
+
 ### Lab Assignments:
 LAB-1 : [https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/LAB-1](https://github.com/kaphc/CSEE5590_Big_Data_Programming/wiki/LAB-1)
