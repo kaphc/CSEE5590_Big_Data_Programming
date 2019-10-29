@@ -1,6 +1,6 @@
 /**
-  * Illustrates flatMap + countByValue for wordcount.
-  */
+ * Illustrates flatMap + countByValue for wordcount.
+ */
 
 
 import org.apache.spark._
@@ -19,7 +19,7 @@ object WordCount {
 
     // Load our input data.
     //val input =  sc.textFile(inputFile)
-    val input = sc.textFile("data/sample.csv")
+    val input = sc.textFile("data/some.txt")
 
     // Split up into words.
     val words = input.flatMap(line => line.split(" ").filter(word => word.matches("#[a-z]*")))
